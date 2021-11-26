@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    RED.nodes.registerType('id-trigger',{
+        category: "input",
+        icon: "hash.svg",
+        color: "#a6bbcf",
+        outputs: 1,
+        defaults: {
+            name: { value: "" },
+            triggerid: { value: "", required: true }
+        },  
+        label: function() {
+            return this.name || "ID-Trigger"
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="id-trigger">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+	<div class="form-row">
+        <label for="node-input-trigger-id"><i class="icon-tasks"></i> Trigger ID</label>
+        <input type="text" id="node-input-triggerid" placeholder="ID">
+    </div>
+
+</script>
+
+<script type="text/x-red" data-help-name="id-trigger">
+   <p>Start flow by Id</p>
+   <b>msg.payload</b>. msg.payload is event.payload</p>
+</script>
